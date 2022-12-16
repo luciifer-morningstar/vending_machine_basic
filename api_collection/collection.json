@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "e841e71b-4ec3-4ea3-8bc3-0a9d5167d308",
+		"name": "Vending Machine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Detail",
+			"item": [
+				{
+					"name": "Register New User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"lucifer_vendor\",\n    \"password\":\"123456789\",\n    \"role\":\"VENDOR\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"lucifer\",\n    \"password\":\"123456789\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Detail",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQyZGU2ZDE3NDRlOTU2NzJmMGRlMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjUwNzMyNTgwLCJleHAiOjE2NTA4MTg5ODB9.j9BeHbTLV4n63hCa7bX7AwLpMdWAwwzFREfG6HZjbAw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"lucifer\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Auth User Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQyZGU2ZDE3NDRlOTU2NzJmMGRlMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjUwNzMyNTgwLCJleHAiOjE2NTA4MTg5ODB9.j9BeHbTLV4n63hCa7bX7AwLpMdWAwwzFREfG6HZjbAw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQzYTAyYjM4NmM1OWIxYmRkZDQzNyIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE2NTA3MzU2MTgsImV4cCI6MTY1MDgyMjAxOH0.gl_Q8XS_uhYuZb72XN1ryF-37PYpXk-XarzMaMCDgO0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Lays Chips\",\n    \"description\":\"Original Lays Crispy And Salty Chips\",\n    \"price\":\"10\",\n    \"quantity\":100,\n    \"image\":\"https://m.media-amazon.com/images/I/81vJyb43URL._SL1500_.jpg\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/62643ac57023899b6bef311a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"62643ac57023899b6bef311a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQzYTAyYjM4NmM1OWIxYmRkZDQzNyIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE2NTA3MzU2MTgsImV4cCI6MTY1MDgyMjAxOH0.gl_Q8XS_uhYuZb72XN1ryF-37PYpXk-XarzMaMCDgO0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Lays Chips\",\n    \"description\":\"Original Lays Salty Chips\",\n    \"price\":\"10\",\n    \"quantity\":100,\n    \"image\":\"https://m.media-amazon.com/images/I/81vJyb43URL._SL1500_.jpg\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Purchase Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQyZGU2ZDE3NDRlOTU2NzJmMGRlMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjUwNzM2NDQ3LCJleHAiOjE2NTA4MjI4NDd9.3o0UJhoMrrTS2iLjPqhalkowh1nhY5NpplkcHStxV80",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/purchase",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"purchase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Multiple Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQzYTAyYjM4NmM1OWIxYmRkZDQzNyIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE2NTA3MzU2MTgsImV4cCI6MTY1MDgyMjAxOH0.gl_Q8XS_uhYuZb72XN1ryF-37PYpXk-XarzMaMCDgO0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQzYTAyYjM4NmM1OWIxYmRkZDQzNyIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE2NTA3MzU2MTgsImV4cCI6MTY1MDgyMjAxOH0.gl_Q8XS_uhYuZb72XN1ryF-37PYpXk-XarzMaMCDgO0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/62643ac57023899b6bef311a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"62643ac57023899b6bef311a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding Money Into User Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQyZGU2ZDE3NDRlOTU2NzJmMGRlMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjUwNzM2NDQ3LCJleHAiOjE2NTA4MjI4NDd9.3o0UJhoMrrTS2iLjPqhalkowh1nhY5NpplkcHStxV80",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\":5\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/add_money",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"add_money"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
